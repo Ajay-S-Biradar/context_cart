@@ -6,9 +6,8 @@ import Card from './Card'
 import CartContext from '../utils/CartContext'
 
 const Body = () => {
-  const {cartinfo,setCartInfo} = useContext(CartContext);
   return (
-    <div className='flex flex-wrap justify-around'>
+    <div className='flex flex-wrap justify-around relative top-[5rem]'>
         {
             data.map(x=>{
                 return <Card info={x} />

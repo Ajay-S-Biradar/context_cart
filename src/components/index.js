@@ -8,6 +8,7 @@ import Footer from './Footer';
 import Body from './Body';
 import Cart from './Cart';
 import CartContext from '../utils/CartContext';
+import Checkout from './Checkout';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -21,7 +22,7 @@ const AppLayout = () =>{
         <CartContext.Provider 
             value={{
                 cartinfo:cartinfo,
-                setCartInfo:setCartInfo
+                setCartInfo:setCartInfo,
             }}
         >
             <Header />
@@ -38,19 +39,13 @@ const AppRouter = createBrowserRouter([
         children:[
             {
                 path:'/',
-                element:[<Body />,<Outlet />],
-                children:[
-                    {
-                        path:'/cart',
-                        element:<Cart />
-                    }
-                ]
+                element:<Body />
             }
         ]
     },
     {
         path:'/checkout',
-        element:<>checkout</>
+        element:<Checkout />
     }
 ])
 
